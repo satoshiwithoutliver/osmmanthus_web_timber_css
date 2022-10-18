@@ -551,8 +551,8 @@ h6,
     font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
     font-size: .7777777778em;
     font-weight: 400;
-    background-color: #5c022b;
-    color: #fff;
+    background-color: #fff;
+    color: #5C022B;
     padding-top: 2px;
     padding-bottom: 2px;
     text-align: center
@@ -574,7 +574,7 @@ h6,
 
 .header-bar a,
 .header-bar button {
-    color: #fff
+    color: #5C022B
 }
 
 .header-bar a:hover,
@@ -583,7 +583,7 @@ h6,
 .header-bar button:hover,
 .header-bar button:active,
 .header-bar button:focus {
-    outline-color: #fff
+    outline-color: #5C022B
 }
 
 .header-bar .inline-list {
@@ -656,7 +656,7 @@ h6,
 
 @media screen and (min-width: 769px) {
     .header-bar__sep {
-        color: #fff;
+        color: #5C022B;
         opacity: 0.4;
         display: inline-block;
         padding: 0 10px
@@ -1000,13 +1000,13 @@ h6,
 
 .mobile-nav__link {
     display: block;
-    border-top: 1px solid #fff;
-    border-color: rgba(255, 255, 255, 0.2)
+    border-top: 1px solid #5C022B;
+    border-color: rgba(92, 2, 43, 0.2)
 }
 
 .mobile-nav__link:last-of-type {
-    border-bottom: 1px solid #fff;
-    border-color: rgba(255, 255, 255, 0.2)
+    border-bottom: 1px solid #5C022B;
+    border-color: rgba(92, 2, 43, 0.2)
 }
 
 .mobile-nav__link>a {
@@ -1072,7 +1072,7 @@ h6,
     display: -webkit-flex;
     display: flex;
     padding: 12px 15px;
-    color: #fff;
+    color: #5C022B;
     font-size: .8333333333em;
     font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif
 }
