@@ -2059,7 +2059,7 @@ main.wrapper.main-content {
 
 footer.site-footer.small--text-center {
     padding: 0;
-    background-color: transparent
+    background-color: rgb(32, 50, 85)
 }
 
 footer.site-footer.small--text-center .wrapper {
