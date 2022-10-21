@@ -3113,7 +3113,7 @@ label.error {
 }
 
 .social-icons li a {
-    color: #545454
+    color: #707070
 }
 
 .social-icons li a:hover {
@@ -3232,7 +3232,7 @@ label.error {
 }
 
 .site-footer__links a {
-    color: #545454
+    color: #707070
 }
 
 .site-footer__links a:hover,
@@ -3249,7 +3249,7 @@ label.error {
     footer h4,
     footer .h4 {
         padding-bottom: 10px;
-        border-bottom: 1px solid #545454
+        border-bottom: 1px solid #707070
     }
 }
 
