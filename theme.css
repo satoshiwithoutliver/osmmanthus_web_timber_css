@@ -515,8 +515,8 @@ h4,
 
 h4,
 .h4 {
-    font-size: .7777777778em;
-    font-weight: normal
+    font-size: .85em;
+    font-weight: bold
 }
 
 h5,
@@ -2059,7 +2059,7 @@ main.wrapper.main-content {
 
 footer.site-footer.small--text-center {
     padding: 0;
-    background-color: rgb(32, 50, 85)
+    background-color: rgba(224, 219, 197, 1)
 }
 
 footer.site-footer.small--text-center .wrapper {
