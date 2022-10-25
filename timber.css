@@ -4059,3 +4059,30 @@ input.cart__quantity-selector {
 button+.note {
     margin-top: 10px
 }
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    font-size: 10px;
+    visibility: hidden;
+    width: 200px;
+    background-color: #AB4B68;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 5px;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 115%;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
