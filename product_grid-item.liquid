@@ -1,0 +1,79 @@
+{% unless grid_item_width %}
+    {% assign grid_item_width = 'small--one-half medium--one-half large--one-quarter' %}
+  {% endunless %}
+  
+  {% unless current_collection == blank %}
+    {% assign current_collection = collection %}
+  {% endunless %}
+  
+  {% assign on_sale = false %}
+  {% assign sale_text = 'products.product.sale' | t %}
+  {% if product.compare_at_price > product.price %}
+    {% assign on_sale = true %}
+  {% endif %}
+  
+  {% assign sold_out = true %}
+  {% assign sold_out_text = 'products.product.sold_out' | t %}
+  {% if product.available %}
+    {% assign sold_out = false %}
+  {% endif %}
+  
+  <div class="product_grid-item grid__item {{grid_item_width}}{% if sold_out %} sold-out{% endif %}{% if on_sale %} on-sale{% endif %}">
+    <div class="grid-link text-center">
+      <span class="grid-link__image grid-link__image--product">
+        {% if on_sale and settings.collections_show_sale_circle %}
+          <span class="badge badge--sale">
+            <span class="badge__text{% if sale_text.size > 7 %} badge__text--small{% endif %}">{{ 'products.product.sale' | t }}</span>
+          </span>
+        {% endif %}
+        {% if sold_out and settings.collections_show_sold_out_circle %}
+          <span class="badge badge--sold-out">
+            <span class="badge__text{% if sold_out_text.size > 9 %} badge__text--small{% endif %}">{{ 'products.product.sold_out' | t }}</span>
+          </span>
+        {% endif %}
+        {% if sold_out == false and product.price > 0 %}
+          {% if product.sole_variant_id != blank %}
+            <div class="addToCartList float-btn btn small--hide medium--hide" data-id="{{product.sole_variant_id}}" data-view="{{ 'products.product.view_cart' | t }}" data-token="{% csrf %}">
+              <i class="icon icon-cart"></i><span> {{ 'products.product.add_to_cart' | t }}</span>
+            </div>
+          {% else %}
+            <a href="{{ product.url | within: collection | escape }}" class="float-btn btn small--hide medium--hide" >
+              <i class="icon icon-cart"></i><span> {{ 'products.product.view_option' | t }}</span>
+            </a>
+          {% endif %}
+        {% endif %}
+        <a href="{{ product.url | within: collection | escape }}" class="grid-link__image-centered">
+          <img src="{{ product.featured_image.src | img_url: 'grande' }}" alt="{{ product.featured_image.alt | escape }}" class="product-featured_image">
+        </a>
+      </span>
+      <a href="{{ product.url | within: collection | escape }}">
+        {% app_snippet 'collection/product_top' %}
+        <p class="grid-link__title">{{ product.title | escape }}</p>
+        {% comment %}
+          <p class="grid-link__title grid-link__vendor">{{ product.vendor | escape }}</p>
+        {% endcomment %}
+        {% app_snippet 'collection/product_middle' %}
+        <p class="grid-link__meta">
+          {% capture price %}{{ product.price | money: shop.money_format }}{% endcapture %}
+          {% if on_sale %}
+          <s class="grid-link__sale_price" data-expires="{{ product.expires }}">{{ product.compare_at_price | money: shop.money_format }}</s>
+          {% endif %}
+          {% if product.price_varies %}{{ 'products.general.from_html' | t: price }}{% else %}{{ price }}{% endif %}
+        </p>
+      </a>
+      
+        {% if sold_out == false and product.price > 0 %}
+          {% if product.sole_variant_id != blank %}
+            <div class="addToCartList btn btn--small large--hide" data-id="{{product.sole_variant_id}}" data-view="{{ 'products.product.view_cart' | t }}" data-token="{% csrf %}">
+              <i class="icon icon-cart"></i><span> {{ 'products.product.add_to_cart' | t }}</span>
+            </div>
+          {% else %}
+            <a href="{{ product.url | within: collection | escape }}" class="btn btn--small large--hide" >
+              <i class="icon icon-cart"></i><span> {{ 'products.product.view_option' | t }}</span>
+            </a>
+          {% endif %}
+        {% endif %}
+      
+      {% app_snippet 'collection/product_bottom' %}
+    </div>
+  </div>
