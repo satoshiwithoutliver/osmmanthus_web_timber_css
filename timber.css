@@ -62,7 +62,7 @@ body {
 
 .wrapper {
     *zoom: 1;
-    max-width: 1030px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -1292,7 +1292,8 @@ td {
     }
 
     .large--one-quarter {
-        width: 25%
+        /**原本是25%被我改成33.333%了抱歉～，有需要再改回來吧**/
+        width: 33.333%
     }
 
     .large--two-quarters {
