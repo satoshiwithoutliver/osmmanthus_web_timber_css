@@ -1292,8 +1292,7 @@ td {
     }
 
     .large--one-quarter {
-        /**原本是25%被我改成33.333%了抱歉～，有需要再改回來吧**/
-        width: 33.333%
+        width: 25%
     }
 
     .large--two-quarters {
