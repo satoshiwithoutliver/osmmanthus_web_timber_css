@@ -2575,7 +2575,7 @@ input[type="number"],
 input[type="tel"],
 textarea,
 select {
-    border: 1px solid #fff;
+    border: 1px solid rgb(114, 51, 51);
     width: 100%;
     max-width: 100%;
     display: block;
